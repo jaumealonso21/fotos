@@ -9,19 +9,26 @@ window.onload = function() {
     img.onload = function() {
         ctx.drawImage(img, 0, 0);
     };
-    //ctx.drawImage(img, 0, 0, 332, 300);
     
+    if(img.onload) {
+        //alert("fjkdjfkjd");
+        gradient();
+    }
     ////ctx.font = '12pt Calibri';
     //ctx.fillStyle = "white";
-    //
-    // Create gradient
-    //var grd=ctx.createLinearGradient(0,0,200,0);
-    var grd = ctx.createLinearGradient(0,0,200,0);
-    grd.addColorStop(0,"red");
-    grd.addColorStop(1,"white");
+    
+    function gradient() {
+        // Create gradient
+        //var grd=ctx.createLinearGradient(0,0,200,0);
+        var grd = ctx.createLinearGradient(0, 0, 300, 332);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
 
-    // Fill with gradient
-    ctx.fillStyle=grd;
-    ctx.fillRect(10,10,332,300);
+        // Fill with gradient
+        ctx.fillStyle=grd;
+        ctx.fillRect(0, 0,332,300);
+    }
+    
+    
 };
 
